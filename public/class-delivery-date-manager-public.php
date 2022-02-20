@@ -133,7 +133,7 @@ class Delivery_Date_Manager_Public {
 		add_filter('woocommerce_billing_fields', array( $data, 'custom_woocommerce_billing_fields'));
 		add_action( 'woocommerce_proceed_to_checkout', array( $data, 'change_proceed_to_checkout' ), 15 );
 
-		add_action('wp_footer', array( $data, 'customer_notes_jquery' ) );
+		//add_action('wp_footer', array( $data, 'customer_notes_jquery' ) );
 
 	}
 
