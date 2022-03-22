@@ -130,7 +130,7 @@ class Delivery_Date_Manager_Public {
 		add_filter( 'woocommerce_get_item_data', array( $data, 'deliveryoptions_filed_display_text_cart' ), 10, 2 );
 		add_action( 'woocommerce_checkout_create_order_line_item', array( $data, 'iconic_add_engraving_text_to_order_items' ), 10, 4 );
 		add_filter( 'woocommerce_add_to_cart_validation', array( $data, 'bbloomer_only_one_in_cart' ), 9999, 2 );
-		add_filter('woocommerce_billing_fields', array( $data, 'custom_woocommerce_billing_fields'));
+		add_filter('woocommerce_billing_fields', array( $data, 'custom_woocommerce_billing_fields') );
 		add_action( 'woocommerce_proceed_to_checkout', array( $data, 'change_proceed_to_checkout' ), 15 );
 
 		add_action('wp_footer', array( $data, 'customer_notes_jquery' ) );

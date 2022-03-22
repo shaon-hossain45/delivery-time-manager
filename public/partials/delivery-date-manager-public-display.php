@@ -113,7 +113,7 @@ class DeliveryDateHooks {
        return $passed;
     }
     
-    public function custom_woocommerce_billing_fields($fields)
+    public function custom_woocommerce_billing_fields( $fields )
     {
     
         $fields['billing_options'] = array(
@@ -137,7 +137,9 @@ class DeliveryDateHooks {
         if(is_cart()){
     // Loop over $cart items
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-         $product55 = $cart_item['iconic-engraving'];
+        if( isset( $cart_item['iconic-engraving'] ) ) {
+            $product55 = $cart_item['iconic-engraving'];
+        }
     }
     
         }
@@ -160,7 +162,7 @@ class DeliveryDateHooks {
         jQuery(function($) {
             <?php // For cart
             if( is_checkout() && ! is_wc_endpoint_url() ) : ?>
-                $('#datepicker2' ).val("<?php echo sanitize_text_field($_POST['customer_notes']); ?>");
+                $('#datepicker2').val("<?php echo sanitize_text_field( $_POST['customer_notes'] ); ?>");
             <?php endif; ?>
         });
         </script>
